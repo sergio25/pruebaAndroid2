@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Main.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="5dip">
+
+        <EditText
+            android:id="@+id/txt_placa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="#00000000"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="@string/placa"
+            android:textSize="16sp"
+            android:inputType="text" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/txt_fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="#00000000"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="@string/fecha"
+           />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/relative_hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/txt_hora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="#00000000"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="16sp"
+            android:hint="@string/hora"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_valida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Valida placa"/>
+
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marginDiez"
+            android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

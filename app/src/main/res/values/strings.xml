@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ValidaPlaca</string>
+    <string name="placa">Placa</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="contravencion">Contravención</string>
+</resources>
