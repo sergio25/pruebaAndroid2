@@ -105,16 +105,19 @@ public class MainPresenter {
                 Integer ultimo_digito = Integer.parseInt(placa.substring(placa.length() - 1));
                 validaPlaca(placa, ultimo_digito);
                 Boolean valida_dia = validaDia(day, ultimo_digito);
+                ArrayList<Contravencion> contravencions = new ArrayList<>();
 
                 if (valida_dia == false) {
-                    activity.msg("Tiene permitido circular, de acuerdo a la normativa");
+                    messageCirculacion(ultimo_digito);
+                    activity.showContravencion(contravencions);
                 } else {
                     Boolean valida_hora = validaHora(hora);
                     if (valida_hora == true) {
                         activity.msg("NO tiene permitido circular, de acuerdo a la normativa");
                         insertContravencion(placa);
                     } else {
-                        activity.msg("Tiene permitido circular, de acuerdo a la normativa");
+                        messageCirculacion(ultimo_digito);
+                        activity.showContravencion(contravencions);
                     }
                 }
             } catch (Exception e) {
@@ -139,6 +142,38 @@ public class MainPresenter {
             return true;
         } else {
             return false;
+        }
+    }
+
+
+    private void messageCirculacion( int digito) {
+        if ((digito == 1 || digito == 2) ) {
+            activity.msg("De acuerdo a la normativa, el vehículo\n" +
+                    "no podrá circular en la ciudad los días lunes desde las 07:00 hasta las 09:30 y en la tarde desde las\n" +
+                    "16:00 hasta las 19:30. Fuera de este horario, el vehículo puede circular sin problemas dentro de la\n" +
+                    "ciudad.");
+        } else if ((digito == 3 || digito == 4) ) {
+            activity.msg("De acuerdo a la normativa, el vehículo\n" +
+                    "no podrá circular en la ciudad los días Martes desde las 07:00 hasta las 09:30 y en la tarde desde las\n" +
+                    "16:00 hasta las 19:30. Fuera de este horario, el vehículo puede circular sin problemas dentro de la\n" +
+                    "ciudad.");
+        } else if ((digito == 5 || digito == 6) ) {
+            activity.msg("De acuerdo a la normativa, el vehículo\n" +
+                    "no podrá circular en la ciudad los días Miercoles desde las 07:00 hasta las 09:30 y en la tarde desde las\n" +
+                    "16:00 hasta las 19:30. Fuera de este horario, el vehículo puede circular sin problemas dentro de la\n" +
+                    "ciudad.");
+        } else if ((digito == 7 || digito == 8) ) {
+            activity.msg("De acuerdo a la normativa, el vehículo\n" +
+                    "no podrá circular en la ciudad los días Jueves desde las 07:00 hasta las 09:30 y en la tarde desde las\n" +
+                    "16:00 hasta las 19:30. Fuera de este horario, el vehículo puede circular sin problemas dentro de la\n" +
+                    "ciudad.");
+        } else if ((digito == 9 || digito == 0) ) {
+            activity.msg("De acuerdo a la normativa, el vehículo\n" +
+                    "no podrá circular en la ciudad los días Viernes desde las 07:00 hasta las 09:30 y en la tarde desde las\n" +
+                    "16:00 hasta las 19:30. Fuera de este horario, el vehículo puede circular sin problemas dentro de la\n" +
+                    "ciudad.");
+        } else {
+            activity.msg("Error el ultimo digito no esta incluido en la normativa");
         }
     }
 
